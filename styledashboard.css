@@ -1,0 +1,72 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    height: 100vh;
+}
+
+/* Dashboard Layout */
+.dashboard-container {
+    display: flex;
+    width: 100%;
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 250px;
+    background: #007BFF;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.sidebar h2 {
+    margin-bottom: 20px;
+}
+
+.nav-btn {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: left;
+}
+
+.nav-btn:hover, .nav-btn.active {
+    background: #0056b3;
+    border-left: 4px solid white;
+    padding-left: 6px;
+}
+
+/* Logout Button */
+#logout-btn {
+    margin-top: auto;
+    padding: 10px;
+    background: #FF4D4D;
+    border: none;
+    color: white;
+    cursor: pointer;
+    width: 100%;
+}
+
+#logout-btn:hover {
+    background: #cc0000;
+}
+
+/* Main Content */
+.dashboard-content {
+    flex-grow: 1;
+    padding: 20px;
+}
