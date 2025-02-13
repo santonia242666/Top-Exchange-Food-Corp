@@ -12,14 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
             return;
         }
 
-        // email format validation
         const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
         if (!emailPattern.test(email)) {
             alert("Please enter a valid email address.");
             return;
         }
 
-        alert("Login successful!"); // Replace this with actual authentication logic
-        form.reset();
+        // Simulating login (replace with real authentication later)
+        localStorage.setItem("user", email); // Store user session
+        alert("Login successful!");
+        window.location.href = "dashboard.html"; // Redirect to dashboard
     });
 });

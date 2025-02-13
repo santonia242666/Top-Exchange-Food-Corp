@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Company Dashboard</title>
+    <link rel="stylesheet" href="styledashboard.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <h2>Company System</h2>
+            <nav>
+                <button class="nav-btn active" data-section="dashboard">🏠 Dashboard</button>
+                <button class="nav-btn" data-section="sales">📊 Sales Data</button>
+                <button class="nav-btn" data-section="forecast">📈 Forecast</button>
+            </nav>
+            <button id="logout-btn" onclick="logout()">🚪 Logout</button>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="dashboard-content">
+            <div class="header">
+                <h1 id="section-title">Dashboard</h1>
+                <button id="input-po-btn" class="po-button">➕ Input P.O</button>
+            </div>
+            <p id="section-content">Welcome to the Company Management System.</p>
+
+            <!-- P.O Data Table -->
+            <div class="po-table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>P.O Number</th>
+                            <th>Date</th>
+                            <th>Amount ($)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="po-data"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- P.O Input Modal -->
+    <div id="po-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>New Purchase Order</h2>
+            <form id="po-form">
+                <label for="po-number">P.O Number:</label>
+                <input type="text" id="po-number" required>
+
+                <label for="po-date">Date:</label>
+                <input type="date" id="po-date" required>
+
+                <label for="po-amount">Amount ($):</label>
+                <input type="number" id="po-amount" required>
+
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function logout() {
+            localStorage.removeItem("user");
+            window.location.href = "index.html";
+        }
+    </script>
+    <script src="dashboard.js"></script>
+</body>
+</html>
